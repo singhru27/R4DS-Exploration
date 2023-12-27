@@ -24,3 +24,11 @@ gss_cat |>
   ) |>
   group_by(year, partyid) |>
   summarize(count = n()) |>
+  ungroup() |>
+  group_by(year) |>
+  mutate(prop = count / sum(count)) |>
+  ggplot() +
+  geom_line(mapping = aes(x = year, y = prop, color = partyid))
+
+gss_cat
+levels(gss_cat$rincome)
