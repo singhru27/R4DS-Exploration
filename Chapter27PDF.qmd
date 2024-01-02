@@ -1,0 +1,52 @@
+---
+title: "Chapter27PDF"
+format: pdf
+editor: visual
+---
+
+```{r}
+#| include: False
+library(tidyverse)
+```
+
+## Text Formatting
+
+*Italic,* **bold,** [underline,]{.underline}
+
+# First Level Header
+
+## Second Level Header
+
+![](images/Baby-Duck-Swimming-In-Water-Wallpaper.jpg){width="466"}
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+You can add options to executable code like this
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
+
+```{r}
+test <- tibble (
+  x = c(1:10),
+  y = c(1:10)
+)
+
+ggplot(test) +
+  geom_point(mapping = aes(x = x, y = y))
+```
+
+```{r}
+knitr::kable(mtcars[1:5,])
+
+```
